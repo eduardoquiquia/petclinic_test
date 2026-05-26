@@ -33,5 +33,4 @@ public class PetMapper {
                 entity.getBirthDate()
         );
     }
-
 }
