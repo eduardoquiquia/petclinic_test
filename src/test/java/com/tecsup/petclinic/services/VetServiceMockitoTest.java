@@ -22,7 +22,7 @@ import com.tecsup.petclinic.repositories.VetRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.bean.override.mockito.MockitoBean;
+import org.springframework.boot.test.mock.mockito.MockBean;
 
 @Slf4j
 @SpringBootTest
@@ -34,7 +34,7 @@ public class VetServiceMockitoTest {
     @Autowired
     private VetMapper vetMapper;
 
-    @MockitoBean
+    @MockBean
     private VetRepository repository;
 
     @BeforeEach
