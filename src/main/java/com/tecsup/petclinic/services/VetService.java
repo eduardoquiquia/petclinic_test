@@ -8,7 +8,7 @@ public interface VetService {
 
     VetDTO create(VetDTO vetDTO);
 
-    VetDTO update(VetDTO vetDTO);
+    VetDTO update(VetDTO vetDTO) throws VetNotFoundException;
 
     void delete(Integer id) throws VetNotFoundException;
 

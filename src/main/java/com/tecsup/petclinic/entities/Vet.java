@@ -17,10 +17,10 @@ public class Vet {
     private Integer id;
 
     @Column(name = "first_name")
-    private String firstname;
+    private String firstName;
 
     @Column(name = "last_name")
-    private String lastname;
+    private String lastName;
 
     private String email;
     private String phone;

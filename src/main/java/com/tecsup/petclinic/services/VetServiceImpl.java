@@ -35,7 +35,7 @@ public class VetServiceImpl implements VetService {
     }
 
     @Override
-    public VetDTO update(VetDTO vetDTO) {
+    public VetDTO update(VetDTO vetDTO) throws VetNotFoundException {
         log.info("Actualizando veterinario con ID: {}", vetDTO.getId());
 
         // Verificamos primero si existe antes de actualizar
