@@ -10,6 +10,80 @@ JAVA_HOME=/Users/diego/Library/Java/JavaVirtualMachines/corretto-17.0.18/Content
 
 ---
 
+## Caso 1 - Pruebas Unitarias de la tabla pets
+
+### Ejecutar prueba de busqueda por ID
+Este comando ejecuta la prueba unitaria que valida la busqueda de una mascota mediante su ID.
+
+```bash
+JAVA_HOME=/Users/diego/Library/Java/JavaVirtualMachines/corretto-17.0.18/Contents/Home ./mvnw test -Dtest=PetServiceTest#testFindPetById
+```
+
+---
+
+### Ejecutar prueba de busqueda por nombre
+Este comando ejecuta la prueba unitaria que valida la busqueda de mascotas por nombre.
+
+```bash
+JAVA_HOME=/Users/diego/Library/Java/JavaVirtualMachines/corretto-17.0.18/Contents/Home ./mvnw test -Dtest=PetServiceTest#testFindPetByName
+```
+
+---
+
+### Ejecutar prueba de busqueda por tipo
+Este comando ejecuta la prueba unitaria que valida la busqueda de mascotas por tipo.
+
+```bash
+JAVA_HOME=/Users/diego/Library/Java/JavaVirtualMachines/corretto-17.0.18/Contents/Home ./mvnw test -Dtest=PetServiceTest#testFindPetByTypeId
+```
+
+---
+
+### Ejecutar prueba de busqueda por Owner ID
+Este comando ejecuta la prueba unitaria que valida la busqueda de mascotas por dueno.
+
+```bash
+JAVA_HOME=/Users/diego/Library/Java/JavaVirtualMachines/corretto-17.0.18/Contents/Home ./mvnw test -Dtest=PetServiceTest#testFindPetByOwnerId
+```
+
+---
+
+### Ejecutar prueba de creacion de mascota
+Este comando ejecuta la prueba unitaria que valida el registro de una nueva mascota.
+
+```bash
+JAVA_HOME=/Users/diego/Library/Java/JavaVirtualMachines/corretto-17.0.18/Contents/Home ./mvnw test -Dtest=PetServiceTest#testCreatePet
+```
+
+---
+
+### Ejecutar prueba de actualizacion de mascota
+Este comando ejecuta la prueba unitaria que valida la modificacion de datos de una mascota existente.
+
+```bash
+JAVA_HOME=/Users/diego/Library/Java/JavaVirtualMachines/corretto-17.0.18/Contents/Home ./mvnw test -Dtest=PetServiceTest#testUpdatePet
+```
+
+---
+
+### Ejecutar prueba de eliminacion de mascota
+Este comando ejecuta la prueba unitaria que valida la eliminacion de una mascota.
+
+```bash
+JAVA_HOME=/Users/diego/Library/Java/JavaVirtualMachines/corretto-17.0.18/Contents/Home ./mvnw test -Dtest=PetServiceTest#testDeletePet
+```
+
+---
+
+### Ejecutar todas las pruebas de PetServiceTest
+Este comando ejecuta todas las pruebas unitarias del caso 1 correspondientes a la tabla pets.
+
+```bash
+JAVA_HOME=/Users/diego/Library/Java/JavaVirtualMachines/corretto-17.0.18/Contents/Home ./mvnw test -Dtest=PetServiceTest
+```
+
+---
+
 ## Caso 2 - Pruebas Unitarias de la tabla owners
 
 ### Ejecutar prueba de busqueda por ID
