@@ -1,12 +1,22 @@
 # PetClinic Test - Pruebas Unitarias
 
+## Requisitos previos
+
+El proyecto debe ejecutarse con Java 17. Para evitar errores si tu terminal usa Java 25 o Java 26 por defecto, los comandos usan `JAVA_HOME` en la misma linea y el wrapper `./mvnw`.
+
+```bash
+JAVA_HOME=/Users/diego/Library/Java/JavaVirtualMachines/corretto-17.0.18/Contents/Home ./mvnw test
+```
+
+---
+
 ## Caso 2 - Pruebas Unitarias de la tabla owners
 
 ### Ejecutar prueba de busqueda por ID
 Este comando ejecuta la prueba unitaria que valida la busqueda de un dueno mediante su ID.
 
 ```bash
-mvn test -Dtest=OwnerServiceTest#testFindOwnerById
+JAVA_HOME=/Users/diego/Library/Java/JavaVirtualMachines/corretto-17.0.18/Contents/Home ./mvnw test -Dtest=OwnerServiceTest#testFindOwnerById
 ```
 
 ---
@@ -15,7 +25,7 @@ mvn test -Dtest=OwnerServiceTest#testFindOwnerById
 Este comando ejecuta la prueba unitaria que valida la busqueda de duenos por apellido.
 
 ```bash
-mvn test -Dtest=OwnerServiceTest#testFindOwnerByLastName
+JAVA_HOME=/Users/diego/Library/Java/JavaVirtualMachines/corretto-17.0.18/Contents/Home ./mvnw test -Dtest=OwnerServiceTest#testFindOwnerByLastName
 ```
 
 ---
@@ -24,7 +34,7 @@ mvn test -Dtest=OwnerServiceTest#testFindOwnerByLastName
 Este comando ejecuta la prueba unitaria que valida el registro de un nuevo dueno en la tabla owners.
 
 ```bash
-mvn test -Dtest=OwnerServiceTest#testCreateOwner
+JAVA_HOME=/Users/diego/Library/Java/JavaVirtualMachines/corretto-17.0.18/Contents/Home ./mvnw test -Dtest=OwnerServiceTest#testCreateOwner
 ```
 
 ---
@@ -33,7 +43,7 @@ mvn test -Dtest=OwnerServiceTest#testCreateOwner
 Este comando ejecuta la prueba unitaria que valida la modificacion de datos de un dueno existente.
 
 ```bash
-mvn test -Dtest=OwnerServiceTest#testUpdateOwner
+JAVA_HOME=/Users/diego/Library/Java/JavaVirtualMachines/corretto-17.0.18/Contents/Home ./mvnw test -Dtest=OwnerServiceTest#testUpdateOwner
 ```
 
 ---
@@ -42,7 +52,7 @@ mvn test -Dtest=OwnerServiceTest#testUpdateOwner
 Este comando ejecuta la prueba unitaria que valida la eliminacion de un dueno de la base de datos.
 
 ```bash
-mvn test -Dtest=OwnerServiceTest#testDeleteOwner
+JAVA_HOME=/Users/diego/Library/Java/JavaVirtualMachines/corretto-17.0.18/Contents/Home ./mvnw test -Dtest=OwnerServiceTest#testDeleteOwner
 ```
 
 ---
@@ -51,7 +61,7 @@ mvn test -Dtest=OwnerServiceTest#testDeleteOwner
 Este comando ejecuta todas las pruebas unitarias del caso 2 correspondientes a la tabla owners.
 
 ```bash
-mvn test -Dtest=OwnerServiceTest
+JAVA_HOME=/Users/diego/Library/Java/JavaVirtualMachines/corretto-17.0.18/Contents/Home ./mvnw test -Dtest=OwnerServiceTest
 ```
 
 ---
@@ -70,28 +80,20 @@ mvn test -Dtest=OwnerServiceTest
 | SpecialtyServiceImpl.java | src/main/java/com/tecsup/petclinic/services/ |
 | SpecialtyServiceTest.java | src/test/java/com/tecsup/petclinic/services/ |
 
-### Requisitos previos
-
-Configurar Java 17 antes de correr los tests:
-
-```bash
-export JAVA_HOME=/Users/diego/Library/Java/JavaVirtualMachines/corretto-17.0.18/Contents/Home
-```
-
 ### Correr todos los tests
 
 ```bash
-mvn clean test -Dtest=SpecialtyServiceTest
+JAVA_HOME=/Users/diego/Library/Java/JavaVirtualMachines/corretto-17.0.18/Contents/Home ./mvnw clean test -Dtest=SpecialtyServiceTest
 ```
 
 ### Correr cada test por separado
 
 ```bash
-mvn test -Dtest=SpecialtyServiceTest#testFindSpecialtyById
-mvn test -Dtest=SpecialtyServiceTest#testFindSpecialtyByName
-mvn test -Dtest=SpecialtyServiceTest#testCreateSpecialty
-mvn test -Dtest=SpecialtyServiceTest#testUpdateSpecialty
-mvn test -Dtest=SpecialtyServiceTest#testDeleteSpecialty
+JAVA_HOME=/Users/diego/Library/Java/JavaVirtualMachines/corretto-17.0.18/Contents/Home ./mvnw test -Dtest=SpecialtyServiceTest#testFindSpecialtyById
+JAVA_HOME=/Users/diego/Library/Java/JavaVirtualMachines/corretto-17.0.18/Contents/Home ./mvnw test -Dtest=SpecialtyServiceTest#testFindSpecialtyByName
+JAVA_HOME=/Users/diego/Library/Java/JavaVirtualMachines/corretto-17.0.18/Contents/Home ./mvnw test -Dtest=SpecialtyServiceTest#testCreateSpecialty
+JAVA_HOME=/Users/diego/Library/Java/JavaVirtualMachines/corretto-17.0.18/Contents/Home ./mvnw test -Dtest=SpecialtyServiceTest#testUpdateSpecialty
+JAVA_HOME=/Users/diego/Library/Java/JavaVirtualMachines/corretto-17.0.18/Contents/Home ./mvnw test -Dtest=SpecialtyServiceTest#testDeleteSpecialty
 ```
 
 ### Resultado esperado
@@ -134,7 +136,7 @@ Verificar que el sistema pueda encontrar correctamente una visita registrada en 
 Comando:
 
 ```bash
-mvn test -Dtest=VisitServiceTest#testFindVisitById
+JAVA_HOME=/Users/diego/Library/Java/JavaVirtualMachines/corretto-17.0.18/Contents/Home ./mvnw test -Dtest=VisitServiceTest#testFindVisitById
 ```
 
 ---
@@ -156,7 +158,7 @@ Comprobar que el sistema pueda listar correctamente las visitas relacionadas a u
 Comando:
 
 ```bash
-mvn test -Dtest=VisitServiceTest#testFindVisitByPetId
+JAVA_HOME=/Users/diego/Library/Java/JavaVirtualMachines/corretto-17.0.18/Contents/Home ./mvnw test -Dtest=VisitServiceTest#testFindVisitByPetId
 ```
 
 ---
@@ -178,7 +180,7 @@ Verificar que el sistema pueda almacenar correctamente una nueva visita en la ba
 Comando:
 
 ```bash
-mvn test -Dtest=VisitServiceTest#testCreateVisit
+JAVA_HOME=/Users/diego/Library/Java/JavaVirtualMachines/corretto-17.0.18/Contents/Home ./mvnw test -Dtest=VisitServiceTest#testCreateVisit
 ```
 
 ---
@@ -200,7 +202,7 @@ Comprobar que el sistema pueda actualizar correctamente los datos de una visita 
 Comando:
 
 ```bash
-mvn test -Dtest=VisitServiceTest#testUpdateVisit
+JAVA_HOME=/Users/diego/Library/Java/JavaVirtualMachines/corretto-17.0.18/Contents/Home ./mvnw test -Dtest=VisitServiceTest#testUpdateVisit
 ```
 
 ---
@@ -222,7 +224,7 @@ Verificar que el sistema elimine correctamente una visita y que esta no pueda se
 Comando:
 
 ```bash
-mvn test -Dtest=VisitServiceTest#testDeleteVisit
+JAVA_HOME=/Users/diego/Library/Java/JavaVirtualMachines/corretto-17.0.18/Contents/Home ./mvnw test -Dtest=VisitServiceTest#testDeleteVisit
 ```
 
 ---
@@ -238,5 +240,5 @@ Validar el correcto funcionamiento completo de las operaciones CRUD de la tabla 
 Comando:
 
 ```bash
-mvn test -Dtest=VisitServiceTest
+JAVA_HOME=/Users/diego/Library/Java/JavaVirtualMachines/corretto-17.0.18/Contents/Home ./mvnw test -Dtest=VisitServiceTest
 ```
