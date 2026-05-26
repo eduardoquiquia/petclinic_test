@@ -1,32 +1,64 @@
-# Spring Boot : Application PetClinic
+cat > README.md << 'ENDOFFILE'
+# PetClinic Test - Pruebas Unitarias
 
-## Features  
+## Caso 3 - Pruebas Unitarias de Specialties
+**Alumno:** Diego
 
-### 1.  Unit Test  --> Tag v1.0.0
-
-mvn test -Dspring.profiles.active=h2
-## Caso 3 - Pruebas Unitarias de Specialties (Diego)
+---
 
 ### Archivos creados
-- src/main/java/com/tecsup/petclinic/entities/Specialty.java
-- src/main/java/com/tecsup/petclinic/repositories/SpecialtyRepository.java
-- src/main/java/com/tecsup/petclinic/services/SpecialtyService.java
-- src/main/java/com/tecsup/petclinic/services/SpecialtyServiceImpl.java
-- src/test/java/com/tecsup/petclinic/services/SpecialtyServiceTest.java
+
+| Archivo | Ubicacion |
+|---------|-----------|
+| Specialty.java | src/main/java/com/tecsup/petclinic/entities/ |
+| SpecialtyRepository.java | src/main/java/com/tecsup/petclinic/repositories/ |
+| SpecialtyService.java | src/main/java/com/tecsup/petclinic/services/ |
+| SpecialtyServiceImpl.java | src/main/java/com/tecsup/petclinic/services/ |
+| SpecialtyServiceTest.java | src/test/java/com/tecsup/petclinic/services/ |
+
+---
 
 ### Requisitos previos
-Antes de correr los tests, configurar Java 17:
-export JAVA_HOME=/Users/diego/Library/Java/JavaVirtualMachines/corretto-17.0.18/Contents/Home
 
-### Correr todos los tests de Specialties
+Configurar Java 17 antes de correr los tests:
+
+```bash
+export JAVA_HOME=/Users/diego/Library/Java/JavaVirtualMachines/corretto-17.0.18/Contents/Home
+```
+
+---
+
+### Correr todos los tests
+
+```bash
 mvn clean test -Dtest=SpecialtyServiceTest
+```
+
+---
 
 ### Correr cada test por separado
+
+```bash
 mvn test -Dtest=SpecialtyServiceTest#testFindSpecialtyById
+```
+
+```bash
 mvn test -Dtest=SpecialtyServiceTest#testFindSpecialtyByName
+```
+
+```bash
 mvn test -Dtest=SpecialtyServiceTest#testCreateSpecialty
+```
+
+```bash
 mvn test -Dtest=SpecialtyServiceTest#testUpdateSpecialty
+```
+
+```bash
 mvn test -Dtest=SpecialtyServiceTest#testDeleteSpecialty
+```
+
+---
 
 ### Resultado esperado
 Tests run: 5, Failures: 0, Errors: 0, Skipped: 0
