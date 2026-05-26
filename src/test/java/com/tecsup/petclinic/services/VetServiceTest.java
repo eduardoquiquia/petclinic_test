@@ -94,8 +94,12 @@ public class VetServiceTest {
         vetDTOCreated.setFirstName(UP_FIRST_NAME);
         vetDTOCreated.setLastName(UP_LAST_NAME);
 
-        VetDTO upgradeVetDTO = this.vetService.update(vetDTOCreated);
-        log.info(">>>>" + upgradeVetDTO);
+        VetDTO upgradeVetDTO = null;
+        try {
+            upgradeVetDTO = this.vetService.update(vetDTOCreated);
+        } catch (VetNotFoundException e) {
+            fail(e.getMessage());
+        }
 
         assertEquals(UP_FIRST_NAME, upgradeVetDTO.getFirstName());
         assertEquals(UP_LAST_NAME, upgradeVetDTO.getLastName());

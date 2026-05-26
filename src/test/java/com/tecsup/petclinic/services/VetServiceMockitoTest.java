@@ -43,7 +43,7 @@ public class VetServiceMockitoTest {
 
     @Test
     public void testFindVetById() {
-        Vet vetExpected = new Vet(1, "James", "Carter", "james.carter@gmail.com", "5551234", true, new ArrayList<>());
+        Vet vetExpected = new Vet(1, "James", "Carter", "james.carter@gmail.com", "5551234", true);
 
         Mockito.when(this.repository.findById(1))
                 .thenReturn(Optional.of(vetExpected));
@@ -65,7 +65,7 @@ public class VetServiceMockitoTest {
         String FIND_NAME = "James";
 
         List<Vet> vetsExpected = new ArrayList<>();
-        vetsExpected.add(new Vet(1, "James", "Carter", "james.carter@gmail.com", "5551234", true, new ArrayList()));
+        vetsExpected.add(new Vet(1, "James", "Carter", "james.carter@gmail.com", "5551234", true));
 
         Mockito.when(this.repository.findByFirstName(FIND_NAME))
                 .thenReturn(vetsExpected);
@@ -77,8 +77,8 @@ public class VetServiceMockitoTest {
 
     @Test
     public void testCreateVet() {
-        Vet newVet = new Vet(null, "William", "Leary", "william@gmail.com", "5556789", true, new ArrayList<>());
-        Vet newVetCreated = new Vet(1, "William", "Leary", "william@gmail.com", "5556789", true, new ArrayList<>());
+        Vet newVet = new Vet(null, "William", "Leary", "william@gmail.com", "5556789", true);
+        Vet newVetCreated = new Vet(1, "William", "Leary", "william@gmail.com", "5556789", true);
 
         VetDTO newVetDTO = this.vetMapper.mapToDto(newVet);
         VetDTO hopeVetDTOCreated = this.vetMapper.mapToDto(newVetCreated);
@@ -101,8 +101,8 @@ public class VetServiceMockitoTest {
         String UP_FIRST_NAME = "Helen2";
         String UP_LAST_NAME = "Leary2";
 
-        Vet newVet = new Vet(null, "Helen", "Leary", "helen@gmail.com", "5550000", true, new ArrayList<>());
-        Vet newVetCreate = new Vet(1, "Helen", "Leary", "helen@gmail.com", "5550000", true, new ArrayList<>());
+        Vet newVet = new Vet(null, "Helen", "Leary", "helen@gmail.com", "5550000", true);
+        Vet newVetCreate = new Vet(1, "Helen", "Leary", "helen@gmail.com", "5550000", true);
 
         VetDTO newVetDTO = vetMapper.mapToDto(newVet);
 
@@ -118,16 +118,19 @@ public class VetServiceMockitoTest {
         newVetDTOCreate.setLastName(UP_LAST_NAME);
 
         VetDTO newVetDTOUpdate = newVetDTOCreate;
-        Vet newVetUpdate = this.petMapper.mapToEntity(newVetDTOUpdate); // Se usa petMapper para la conversión plana
+        Vet newVetUpdate = this.vetMapper.mapToEntity(newVetDTOUpdate);
 
         Mockito.when(this.repository.existsById(newVetDTOCreate.getId()))
                 .thenReturn(true);
         Mockito.when(this.repository.save(newVetUpdate))
                 .thenReturn(newVetUpdate);
 
-        // Execute update
-        VetDTO vetDTOUpdate = this.vetService.update(newVetDTOCreate);
-        log.info("{}", vetDTOUpdate);
+        VetDTO vetDTOUpdate = null;
+        try {
+            vetDTOUpdate = this.vetService.update(newVetDTOCreate);
+        } catch (VetNotFoundException e) {
+            fail("No debería lanzar excepción en un flujo correcto: " + e.getMessage());
+        }
 
         assertEquals(UP_FIRST_NAME, vetDTOUpdate.getFirstName());
         assertEquals(UP_LAST_NAME, vetDTOUpdate.getLastName());
@@ -135,8 +138,8 @@ public class VetServiceMockitoTest {
 
     @Test
     public void testDeleteVet() {
-        Vet newVet = new Vet(null, "Rafael", "Ortega", "rafael@gmail.com", "5551111", true, new ArrayList<>());
-        Vet newVetCreate = new Vet(1, "Rafael", "Ortega", "rafael@gmail.com", "5551111", true, new ArrayList<>());
+        Vet newVet = new Vet(null, "Rafael", "Ortega", "rafael@gmail.com", "5551111", true);
+        Vet newVetCreate = new Vet(1, "Rafael", "Ortega", "rafael@gmail.com", "5551111", true);
 
         VetDTO newVetDTO = this.vetMapper.mapToDto(newVet);
 
