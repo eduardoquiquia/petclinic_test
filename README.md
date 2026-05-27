@@ -4,85 +4,110 @@
 
 El proyecto debe ejecutarse con Java 17. Para evitar errores si tu terminal usa Java 25 o Java 26 por defecto, los comandos usan `JAVA_HOME` en la misma linea y el wrapper `./mvnw`.
 
-```bash
-JAVA_HOME=/Users/diego/Library/Java/JavaVirtualMachines/corretto-17.0.18/Contents/Home ./mvnw test
-```
-
 ---
 
-## Caso 1 - Pruebas Unitarias de la tabla pets
+## Caso 1 - Pruebas Unitarias de la tabla vets
 
 ### Ejecutar prueba de busqueda por ID
-Este comando ejecuta la prueba unitaria que valida la busqueda de una mascota mediante su ID.
+Este comando ejecuta la prueba unitaria que valida la busqueda de un veterinario mediante su ID.
 
 ```bash
-JAVA_HOME=/Users/diego/Library/Java/JavaVirtualMachines/corretto-17.0.18/Contents/Home ./mvnw test -Dtest=PetServiceTest#testFindPetById
+mvn test -Dtest=VetServiceTest#testFindVetById
 ```
 
 ---
 
 ### Ejecutar prueba de busqueda por nombre
-Este comando ejecuta la prueba unitaria que valida la busqueda de mascotas por nombre.
+Este comando ejecuta la prueba unitaria que valida la busqueda de veterianrios por nombre.
 
 ```bash
-JAVA_HOME=/Users/diego/Library/Java/JavaVirtualMachines/corretto-17.0.18/Contents/Home ./mvnw test -Dtest=PetServiceTest#testFindPetByName
+mvn test -Dtest=VetServiceTest#testFindVetByFirstName
 ```
 
 ---
 
-### Ejecutar prueba de busqueda por tipo
-Este comando ejecuta la prueba unitaria que valida la busqueda de mascotas por tipo.
+### Ejecutar prueba de creacion de veterinario
+Este comando ejecuta la prueba unitaria que valida el registro de un nuevo veterinario.
 
 ```bash
-JAVA_HOME=/Users/diego/Library/Java/JavaVirtualMachines/corretto-17.0.18/Contents/Home ./mvnw test -Dtest=PetServiceTest#testFindPetByTypeId
+mvn test -Dtest=VetServiceTest#testCreateVet
 ```
 
 ---
 
-### Ejecutar prueba de busqueda por Owner ID
-Este comando ejecuta la prueba unitaria que valida la busqueda de mascotas por dueno.
+### Ejecutar prueba de actualizacion de veterinario
+Este comando ejecuta la prueba unitaria que valida la modificacion de datos de un veterinario existente.
 
 ```bash
-JAVA_HOME=/Users/diego/Library/Java/JavaVirtualMachines/corretto-17.0.18/Contents/Home ./mvnw test -Dtest=PetServiceTest#testFindPetByOwnerId
+mvn test -Dtest=VetServiceTest#testUpdateVet
 ```
 
 ---
 
-### Ejecutar prueba de creacion de mascota
-Este comando ejecuta la prueba unitaria que valida el registro de una nueva mascota.
+### Ejecutar prueba de eliminacion de veterinario
+Este comando ejecuta la prueba unitaria que valida la eliminacion de un veterinario.
 
 ```bash
-JAVA_HOME=/Users/diego/Library/Java/JavaVirtualMachines/corretto-17.0.18/Contents/Home ./mvnw test -Dtest=PetServiceTest#testCreatePet
+mvn test -Dtest=VetServiceTest#testDeleteVet
 ```
 
 ---
 
-### Ejecutar prueba de actualizacion de mascota
-Este comando ejecuta la prueba unitaria que valida la modificacion de datos de una mascota existente.
+### Ejecutar todas las pruebas de VetServiceTest
+Este comando ejecuta todas las pruebas unitarias del caso 1 correspondientes a la tabla vets.
 
 ```bash
-JAVA_HOME=/Users/diego/Library/Java/JavaVirtualMachines/corretto-17.0.18/Contents/Home ./mvnw test -Dtest=PetServiceTest#testUpdatePet
+mvn test -Dtest=VetServiceTest
+```
+
+## Pruebas Unitarias de la tabla vets (Mockito)
+
+### Probar solo Buscar por ID (Mock):
+
+```bash
+mvn test -Dtest=VetServiceMockitoTest#testFindVetById
 ```
 
 ---
 
-### Ejecutar prueba de eliminacion de mascota
-Este comando ejecuta la prueba unitaria que valida la eliminacion de una mascota.
+### Probar solo Buscar por Nombre (Mock):
 
 ```bash
-JAVA_HOME=/Users/diego/Library/Java/JavaVirtualMachines/corretto-17.0.18/Contents/Home ./mvnw test -Dtest=PetServiceTest#testDeletePet
+mvn test -Dtest=VetServiceMockitoTest#testFindVetByFirstName
 ```
 
 ---
 
-### Ejecutar todas las pruebas de PetServiceTest
-Este comando ejecuta todas las pruebas unitarias del caso 1 correspondientes a la tabla pets.
+### Probar solo Crear (Mock):
 
 ```bash
-JAVA_HOME=/Users/diego/Library/Java/JavaVirtualMachines/corretto-17.0.18/Contents/Home ./mvnw test -Dtest=PetServiceTest
+mvn test -Dtest=VetServiceMockitoTest#testCreateVet
 ```
 
 ---
+
+### Probar solo Actualizar (Mock):
+
+```bash
+mvn test -Dtest=VetServiceMockitoTest#testUpdateVet
+```
+
+---
+
+### Probar solo Eliminar (Mock):
+
+```bash
+mvn test -Dtest=VetServiceMockitoTest#testUpdateVet
+```
+
+---
+
+### Ejecutar todas las pruebas de VetServiceMockitoTest
+
+```bash
+mvn test -Dtest=VetServiceMockitoTest
+```
+
 # Caso 2 - Pruebas Unitarias de la tabla owners
 
 ## Ejecutar prueba de búsqueda por ID
