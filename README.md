@@ -83,61 +83,59 @@ JAVA_HOME=/Users/diego/Library/Java/JavaVirtualMachines/corretto-17.0.18/Content
 ```
 
 ---
+# Caso 2 - Pruebas Unitarias de la tabla owners
 
-## Caso 2 - Pruebas Unitarias de la tabla owners
-
-### Ejecutar prueba de busqueda por ID
-Este comando ejecuta la prueba unitaria que valida la busqueda de un dueno mediante su ID.
+## Ejecutar prueba de búsqueda por ID
+Este comando ejecuta la prueba unitaria que valida la búsqueda de un dueño mediante su ID.
 
 ```bash
-JAVA_HOME=/Users/diego/Library/Java/JavaVirtualMachines/corretto-17.0.18/Contents/Home ./mvnw test -Dtest=OwnerServiceTest#testFindOwnerById
+mvn test -Dtest=OwnerServiceTest#testFindOwnerById
 ```
 
 ---
 
-### Ejecutar prueba de busqueda por apellido
-Este comando ejecuta la prueba unitaria que valida la busqueda de duenos por apellido.
+## Ejecutar prueba de búsqueda por apellido
+Este comando ejecuta la prueba unitaria que valida la búsqueda de dueños por apellido.
 
 ```bash
-JAVA_HOME=/Users/diego/Library/Java/JavaVirtualMachines/corretto-17.0.18/Contents/Home ./mvnw test -Dtest=OwnerServiceTest#testFindOwnerByLastName
+mvn test -Dtest=OwnerServiceTest#testFindOwnerByLastName
 ```
 
 ---
 
-### Ejecutar prueba de creacion de dueno
-Este comando ejecuta la prueba unitaria que valida el registro de un nuevo dueno en la tabla owners.
+## Ejecutar prueba de creación de dueño
+Este comando ejecuta la prueba unitaria que valida el registro de un nuevo dueño en la tabla owners.
 
 ```bash
-JAVA_HOME=/Users/diego/Library/Java/JavaVirtualMachines/corretto-17.0.18/Contents/Home ./mvnw test -Dtest=OwnerServiceTest#testCreateOwner
+mvn test -Dtest=OwnerServiceTest#testCreateOwner
 ```
 
 ---
 
-### Ejecutar prueba de actualizacion de dueno
-Este comando ejecuta la prueba unitaria que valida la modificacion de datos de un dueno existente.
+## Ejecutar prueba de actualización de dueño
+Este comando ejecuta la prueba unitaria que valida la modificación de datos de un dueño existente.
 
 ```bash
-JAVA_HOME=/Users/diego/Library/Java/JavaVirtualMachines/corretto-17.0.18/Contents/Home ./mvnw test -Dtest=OwnerServiceTest#testUpdateOwner
+mvn test -Dtest=OwnerServiceTest#testUpdateOwner
 ```
 
 ---
 
-### Ejecutar prueba de eliminacion de dueno
-Este comando ejecuta la prueba unitaria que valida la eliminacion de un dueno de la base de datos.
+## Ejecutar prueba de eliminación de dueño
+Este comando ejecuta la prueba unitaria que valida la eliminación de un dueño de la base de datos.
 
 ```bash
-JAVA_HOME=/Users/diego/Library/Java/JavaVirtualMachines/corretto-17.0.18/Contents/Home ./mvnw test -Dtest=OwnerServiceTest#testDeleteOwner
+mvn test -Dtest=OwnerServiceTest#testDeleteOwner
 ```
 
 ---
 
-### Ejecutar todas las pruebas de OwnerServiceTest
+## Ejecutar todas las pruebas de OwnerServiceTest
 Este comando ejecuta todas las pruebas unitarias del caso 2 correspondientes a la tabla owners.
 
 ```bash
-JAVA_HOME=/Users/diego/Library/Java/JavaVirtualMachines/corretto-17.0.18/Contents/Home ./mvnw test -Dtest=OwnerServiceTest
+mvn test -Dtest=OwnerServiceTest
 ```
-
 ---
 
 ## Caso 3 - Pruebas Unitarias de Specialties
@@ -179,140 +177,147 @@ BUILD SUCCESS
 
 ---
 
-## Caso 4 - Pruebas Unitarias de la tabla visits
+# Caso 4 - Pruebas Unitarias de la tabla visits
 
-### Clase implementada
+## Descripción
 
-```text
-VisitServiceTest.java
-```
+En este caso se desarrollaron pruebas unitarias para validar las operaciones CRUD de la tabla `visits` del sistema PetClinic utilizando Spring Boot, JUnit y Maven.
 
-Ruta:
+Las pruebas implementadas permiten verificar el correcto funcionamiento de:
 
-```text
-src/test/java/com/tecsup/petclinic/services/VisitServiceTest.java
-```
+- Búsqueda de visitas por ID
+- Búsqueda de visitas por mascota
+- Registro de nuevas visitas
+- Actualización de visitas
+- Eliminación de visitas
 
-### 1. Ejecutar prueba de busqueda por ID
+---
 
-Metodo:
+# Ejecución de Pruebas Unitarias
+
+## 1. Ejecutar prueba de búsqueda por ID
+
+Método
 
 ```java
 testFindVisitById()
 ```
 
-Descripcion:
-Esta prueba unitaria valida la busqueda de una visita mediante su identificador (`ID`) dentro de la tabla `visits`.
+Descripción  
+Esta prueba unitaria valida la búsqueda de una visita mediante su identificador (`ID`) dentro de la tabla `visits`.
 
-Objetivo:
+Objetivo  
 Verificar que el sistema pueda encontrar correctamente una visita registrada en la base de datos.
 
-Comando:
+Comando
 
 ```bash
-JAVA_HOME=/Users/diego/Library/Java/JavaVirtualMachines/corretto-17.0.18/Contents/Home ./mvnw test -Dtest=VisitServiceTest#testFindVisitById
+mvn test -Dtest=VisitServiceTest#testFindVisitById
 ```
 
 ---
 
-### 2. Ejecutar prueba de busqueda por Pet ID
+## 2. Ejecutar prueba de búsqueda por Pet ID
 
-Metodo:
+Método
 
 ```java
 testFindVisitByPetId()
 ```
 
-Descripcion:
-Esta prueba unitaria valida la busqueda de visitas asociadas a una mascota especifica.
+Descripción  
+Esta prueba unitaria valida la búsqueda de visitas asociadas a una mascota específica.
 
-Objetivo:
+Objetivo  
 Comprobar que el sistema pueda listar correctamente las visitas relacionadas a una mascota registrada.
 
-Comando:
+Comando
 
 ```bash
-JAVA_HOME=/Users/diego/Library/Java/JavaVirtualMachines/corretto-17.0.18/Contents/Home ./mvnw test -Dtest=VisitServiceTest#testFindVisitByPetId
+mvn test -Dtest=VisitServiceTest#testFindVisitByPetId
 ```
 
 ---
 
-### 3. Ejecutar prueba de creacion de visita
+## 3. Ejecutar prueba de creación de visita
 
-Metodo:
+Método
 
 ```java
 testCreateVisit()
 ```
 
-Descripcion:
+Descripción  
 Esta prueba unitaria valida el registro de una nueva visita dentro de la tabla `visits`.
 
-Objetivo:
+Objetivo  
 Verificar que el sistema pueda almacenar correctamente una nueva visita en la base de datos.
 
-Comando:
+Comando
 
 ```bash
-JAVA_HOME=/Users/diego/Library/Java/JavaVirtualMachines/corretto-17.0.18/Contents/Home ./mvnw test -Dtest=VisitServiceTest#testCreateVisit
+mvn test -Dtest=VisitServiceTest#testCreateVisit
 ```
 
 ---
 
-### 4. Ejecutar prueba de actualizacion de visita
+## 4. Ejecutar prueba de actualización de visita
 
-Metodo:
+Método
 
 ```java
 testUpdateVisit()
 ```
 
-Descripcion:
-Esta prueba unitaria valida la modificacion de informacion de una visita existente.
+Descripción  
+Esta prueba unitaria valida la modificación de información de una visita existente.
 
-Objetivo:
+Objetivo  
 Comprobar que el sistema pueda actualizar correctamente los datos de una visita registrada.
 
-Comando:
+Comando
 
 ```bash
-JAVA_HOME=/Users/diego/Library/Java/JavaVirtualMachines/corretto-17.0.18/Contents/Home ./mvnw test -Dtest=VisitServiceTest#testUpdateVisit
+mvn test -Dtest=VisitServiceTest#testUpdateVisit
 ```
 
 ---
 
-### 5. Ejecutar prueba de eliminacion de visita
+## 5. Ejecutar prueba de eliminación de visita
 
-Metodo:
+Método
 
 ```java
 testDeleteVisit()
 ```
 
-Descripcion:
-Esta prueba unitaria valida la eliminacion de una visita de la base de datos.
+Descripción  
+Esta prueba unitaria valida la eliminación de una visita de la base de datos.
 
-Objetivo:
+Objetivo  
 Verificar que el sistema elimine correctamente una visita y que esta no pueda ser encontrada posteriormente.
 
-Comando:
+Comando
 
 ```bash
-JAVA_HOME=/Users/diego/Library/Java/JavaVirtualMachines/corretto-17.0.18/Contents/Home ./mvnw test -Dtest=VisitServiceTest#testDeleteVisit
+mvn test -Dtest=VisitServiceTest#testDeleteVisit
 ```
 
 ---
 
-### 6. Ejecutar todas las pruebas de VisitServiceTest
+## 6. Ejecutar todas las pruebas de VisitServiceTest
 
-Descripcion:
+Descripción  
 Este comando ejecuta todas las pruebas unitarias implementadas en la clase `VisitServiceTest`.
 
-Objetivo:
+Objetivo  
 Validar el correcto funcionamiento completo de las operaciones CRUD de la tabla `visits`.
 
-Comando:
+Comando
 
 ```bash
-JAVA_HOME=/Users/diego/Library/Java/JavaVirtualMachines/corretto-17.0.18/Contents/Home ./mvnw test -Dtest=VisitServiceTest
+mvn test -Dtest=VisitServiceTest
 ```
+
+
+
